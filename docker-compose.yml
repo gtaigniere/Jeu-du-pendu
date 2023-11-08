@@ -1,0 +1,19 @@
+version: '3.8'
+# lancer avec : docker compose --env-file .env up
+services:
+  web:
+    image: php7.4-apache
+    container_name: php-apache-test
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+      - COMPOSER_ALLOW_SUPERUSER=1
+    ports:
+      # local:container
+      - ${APP_PORT:-80}:80
+    volumes:
+      # Volume stockant les fichiers web du projet
+      - ./php:/var/www/html
