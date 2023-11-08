@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     image: php7.4-apache
-    container_name: php-apache-test
+    container_name: php-apache-jeu-du-pendu
     restart: on-failure
     build:
       context: .
