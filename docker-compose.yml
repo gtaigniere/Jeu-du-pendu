@@ -1,4 +1,4 @@
-#version: '3.8'
+version: '3.8'
 # lancer avec : docker compose --env-file .env up
 services:
   web:
